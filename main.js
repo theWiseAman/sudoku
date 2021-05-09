@@ -1,13 +1,3 @@
-function displayDiff() {
-    const difficulty = document.getElementsByName("difficulty");
-}
-
-const reloadBtn= document.querySelector("#reload");
-function reload() {
-    reload = location.reload();
-}
-reloadBtn.addEventListener("click", reload, false);
-
 function swap(index1, index2, c) {
     if(c == 'c')
     {
@@ -59,12 +49,6 @@ function generateSudoku() {
     for (let i = 0; i < 3; i++)
         swap(i + 3 * num1, i + 3 * num2, 'r');
     console.log(sudoku);
-    let p = document.getElementsByTagName("p");
-    console.log(p);
-    let k = 0;
-    for(let i = 0; i < 9; i++)
-    for(let j = 0; j < 9; j++)
-        p[k++].innerText = sudoku[i][j];
 }
 
 var sudoku = [
@@ -78,12 +62,79 @@ var sudoku = [
         [6, 4, 5, 9, 7, 8, 3, 1, 2],
         [9, 7, 8, 3, 1, 2, 6, 4, 5]
     ];
-window.generateSudoku();
 
 var timer;
 var selectedNum;
 var selectedTile;
+var disableSelect;
 
 window.onload = function() {
-    document.get
+    var newGameBtn = id("newGame");
+    newGameBtn.addEventListener("click", startGame());
+    var reloadBtn= id("reload");
+    reloadBtn.addEventListener("click", reload, false);
 }
+
+function id(id) {
+    return document.getElementById(id);
+}
+function qs(selector) {
+    return document.querySelector(selector);
+}
+function qsa(selector) {
+    return document.querySelectorAll(selector);
+}
+
+function reload() {
+    reload = location.reload();
+}
+
+function startGame() {
+    var diffLevel = id("diffLevel");
+    var diff = id("difficulty");
+    diffLevel.textContent = diff.options[diff.selectedIndex].text;
+
+    disableSelect = false;
+    
+    var timer = id("timer");
+
+    generateBoard(diff.value);
+}
+
+function generateBoard(diffLevel) {
+    clearPrevious();
+    generateSudoku();
+    let fill;
+    if(diffLevel == "easy") fill = 45;
+    else if (diffLevel == "medium") fill = 36;
+    else if (diffLevel == "hard") fill = 24;
+    else if (diffLevel == "expert") fill = 17;
+    let pos = [], num;
+    for (let i = 0; i < fill; i++) {
+        do {
+            num = Math.floor(Math.random() * 81);
+        } while(pos.includes(num));
+        pos.push(num);
+    }
+    console.log(pos);
+    let p = qsa("p");
+    let k = 0;
+    for (let i = 0; i < 9; i++)
+    for (let j = 0; j < 9; j++, k++) {
+        if (pos.includes(k)) p[k].textContent = sudoku[i][j];
+    }
+    
+}
+
+function clearPrevious() {
+    let p = qsa("p");
+    for (let i = 0; i < p.length; i++)
+        p[i].textContent = null;
+    
+    if(timer) clearTimeout(timer);
+
+    selectedTile = null;
+    selectedNum = null;
+}
+
+

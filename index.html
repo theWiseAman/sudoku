@@ -23,9 +23,9 @@
     </header>
     <div class="content">
         <div class="head">
-            <span>Medium</span>
+            <span id="diffLevel"></span>
             <span>Auto-Check for Mistakes</span>
-            <span>Timer <button>P</button></span>
+            <span id="timer"><button>P</button></span>
             
         </div>
         <div class="sudoku">
@@ -112,9 +112,9 @@
             <p></p>
         </div>
         <div class="funcBtn">
-            <button onclick="displayDiff">New Game</button>
-            <select name="difficulty" class="hidden">
-                <option value="easy">Easy</option>
+            <button onclick="startGame()" id="newGame">New Game</button>
+            <select name="difficulty" id="difficulty" class="hidden">
+                <option value="easy" selected>Easy</option>
                 <option value="medium">Medium</option>
                 <option value="hard">Hard</option>
                 <option value="expert">Expert</option>

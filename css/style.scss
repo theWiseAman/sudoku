@@ -52,6 +52,11 @@ body {
       p {
         height: 50px;
         width: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+        font-weight: 700;
         border: solid lightgray 1px;
       }
     }
