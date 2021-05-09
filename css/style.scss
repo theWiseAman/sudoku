@@ -1,0 +1,84 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  display: grid;
+  justify-content: center;
+  font-family: "Source Sans Pro", sans-serif;
+  header {
+    height: 75px;
+    display: grid;
+    grid-template-columns: 6fr 1fr 1fr 1fr;
+    align-items: center;
+    border-bottom: solid silver 1px;
+    h2 {
+      display: inline-block;
+    }
+    a {
+      padding: 10px 20px;
+    }
+    select {
+      margin: 0 20px;
+      padding: 10px;
+      border: none;
+    }
+  }
+  .content {
+    display: grid;
+    grid-template-rows: 75px 1fr;
+    grid-template-columns: 3fr 2fr;
+    grid-column-gap: 20px;
+    .head {
+      height: 75px;
+      grid-area: 1/1/2/3;
+      display: grid;
+      grid-template-columns: 1fr 8fr 1fr;
+      justify-items: center;
+      align-items: center;
+      margin: 0px auto;
+    }
+    .sudoku {
+      justify-self: flex-end;
+      height: 454px;
+      width: 454px;
+      display: grid;
+      grid-template-columns: repeat(9, 1fr);
+      grid-template-rows: repeat(9, 1fr);
+      border: solid black 2px;
+
+      p {
+        height: 50px;
+        width: 50px;
+        border: solid lightgray 1px;
+      }
+    }
+    .funcBtn {
+      justify-self: flex-start;
+      height: 450px;
+      padding: 10px;
+      border: silver solid 1px;
+      display: grid;
+      grid-template-rows: 1fr 1fr 2fr 3fr;
+      button {
+        cursor: pointer;
+      }
+      .hidden {
+        display: none;
+      }
+      .active {
+        display: block;
+      }
+      .gameBtn {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+      .numBtn {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+      }
+    }
+  }
+}

@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  display: -ms-grid;
+  display: grid;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+body header {
+  height: 75px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 6fr 1fr 1fr 1fr;
+      grid-template-columns: 6fr 1fr 1fr 1fr;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: solid silver 1px;
+}
+
+body header h2 {
+  display: inline-block;
+}
+
+body header a {
+  padding: 10px 20px;
+}
+
+body header select {
+  margin: 0 20px;
+  padding: 10px;
+  border: none;
+}
+
+body .content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 75px 1fr;
+      grid-template-rows: 75px 1fr;
+  -ms-grid-columns: 3fr 2fr;
+      grid-template-columns: 3fr 2fr;
+  grid-column-gap: 20px;
+}
+
+body .content .head {
+  height: 75px;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 2;
+  grid-area: 1/1/2/3;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 8fr 1fr;
+      grid-template-columns: 1fr 8fr 1fr;
+  justify-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0px auto;
+}
+
+body .content .sudoku {
+  justify-self: flex-end;
+  height: 454px;
+  width: 454px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[9];
+      grid-template-columns: repeat(9, 1fr);
+  -ms-grid-rows: (1fr)[9];
+      grid-template-rows: repeat(9, 1fr);
+  border: solid black 2px;
+}
+
+body .content .sudoku p {
+  height: 50px;
+  width: 50px;
+  border: solid lightgray 1px;
+}
+
+body .content .funcBtn {
+  justify-self: flex-start;
+  height: 450px;
+  padding: 10px;
+  border: silver solid 1px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 1fr 1fr 2fr 3fr;
+      grid-template-rows: 1fr 1fr 2fr 3fr;
+}
+
+body .content .funcBtn button {
+  cursor: pointer;
+}
+
+body .content .funcBtn .hidden {
+  display: none;
+}
+
+body .content .funcBtn .active {
+  display: block;
+}
+
+body .content .funcBtn .gameBtn {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+
+body .content .funcBtn .numBtn {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+}
+/*# sourceMappingURL=style.css.map */
