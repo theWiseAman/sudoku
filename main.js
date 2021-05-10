@@ -200,8 +200,10 @@ function updateMove() {
 
 function clearPrevious() {
     let p = qsa("p");
-    for (let i = 0; i < p.length; i++)
+    for (let i = 0; i < p.length; i++) {
+        p[i].classList.remove(...p[i].classList);
         p[i].textContent = null;
+    }
     
     if(timer) clearTimeout(timer);
 
