@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -6,9 +6,13 @@
           box-sizing: border-box;
 }
 
+.selected {
+  background-color: plum;
+}
+
 body {
-  display: -ms-grid;
-  display: grid;
+  display: flexbox;
+  font-weight: 700;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
@@ -17,6 +21,8 @@ body {
 
 body header {
   height: 75px;
+  width: 850px;
+  max-width: 100%;
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 6fr 1fr 1fr 1fr;
@@ -24,7 +30,7 @@ body header {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  border-bottom: solid silver 1px;
+  margin: 0px auto;
 }
 
 body header h2 {
@@ -42,12 +48,13 @@ body header select {
 }
 
 body .content {
+  border-top: solid silver 1px;
   display: -ms-grid;
   display: grid;
   -ms-grid-rows: 75px 1fr;
       grid-template-rows: 75px 1fr;
-  -ms-grid-columns: 3fr 2fr;
-      grid-template-columns: 3fr 2fr;
+  -ms-grid-columns: 2.5fr 2.1fr;
+      grid-template-columns: 2.5fr 2.1fr;
   grid-column-gap: 20px;
 }
 
@@ -60,8 +67,8 @@ body .content .head {
   grid-area: 1/1/2/3;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 1fr 8fr 1fr;
-      grid-template-columns: 1fr 8fr 1fr;
+  -ms-grid-columns: 1fr 8fr 2fr;
+      grid-template-columns: 1fr 8fr 2fr;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -97,6 +104,15 @@ body .content .sudoku p {
   font-size: 24px;
   font-weight: 700;
   border: solid lightgray 1px;
+}
+
+body .content .sudoku .blankTile {
+  font-weight: 300;
+  background-color: yellow;
+}
+
+body .content .sudoku .selected {
+  background-color: plum;
 }
 
 body .content .funcBtn {

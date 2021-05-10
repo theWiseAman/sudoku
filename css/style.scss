@@ -1,19 +1,25 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300&display=swap");
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+.selected {
+  background-color: plum;
+}
 body {
-  display: grid;
+  display: flexbox;
+  font-weight: 700;
   justify-content: center;
   font-family: "Source Sans Pro", sans-serif;
   header {
     height: 75px;
+    width: 850px;
+    max-width: 100%;
     display: grid;
     grid-template-columns: 6fr 1fr 1fr 1fr;
     align-items: center;
-    border-bottom: solid silver 1px;
+    margin: 0px auto;
     h2 {
       display: inline-block;
     }
@@ -27,15 +33,16 @@ body {
     }
   }
   .content {
+    border-top: solid silver 1px;
     display: grid;
     grid-template-rows: 75px 1fr;
-    grid-template-columns: 3fr 2fr;
+    grid-template-columns: 2.5fr 2.1fr;
     grid-column-gap: 20px;
     .head {
       height: 75px;
       grid-area: 1/1/2/3;
       display: grid;
-      grid-template-columns: 1fr 8fr 1fr;
+      grid-template-columns: 1fr 8fr 2fr;
       justify-items: center;
       align-items: center;
       margin: 0px auto;
@@ -58,6 +65,13 @@ body {
         font-size: 24px;
         font-weight: 700;
         border: solid lightgray 1px;
+      }
+      .blankTile {
+        font-weight: 300;
+        background-color: yellow;
+      }
+      .selected {
+        background-color: plum;
       }
     }
     .funcBtn {
