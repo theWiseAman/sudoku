@@ -17,7 +17,7 @@ body {
     width: 850px;
     max-width: 100%;
     display: grid;
-    grid-template-columns: 6fr 1fr 1fr 1fr;
+    grid-template-columns: 6fr max-content max-content max-content;
     align-items: center;
     margin: 0px auto;
     h2 {
@@ -42,7 +42,7 @@ body {
       height: 75px;
       grid-area: 1/1/2/3;
       display: grid;
-      grid-template-columns: 1fr 8fr 2fr;
+      grid-template-columns: 75px 400px 100px;
       justify-items: center;
       align-items: center;
       margin: 0px auto;
@@ -69,6 +69,7 @@ body {
       .blankTile {
         font-weight: 300;
         background-color: yellow;
+        cursor: pointer;
       }
       .selected {
         background-color: plum;

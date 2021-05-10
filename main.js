@@ -72,11 +72,6 @@ var pause = false;
 var time;
 
 window.onload = function() {
-    let board = qs(".sudoku");
-    for (let i = 0; i < 81; i++) {
-        let p = document.createElement("p");
-        board.appendChild(p);
-    }
     var newGameBtn = id("newGame");
     newGameBtn.addEventListener("click", startGame());
     var reloadBtn= id("reload");
@@ -151,6 +146,12 @@ function startGame() {
 function generateBoard(diffLevel) {
     clearPrevious();
     generateSudoku();
+    let board = qs(".sudoku");
+    for (let i = 0; i < 81; i++) {
+        let p = document.createElement("p");
+        board.appendChild(p);
+    }
+
     let fill;
     if(diffLevel == "easy") fill = 45;
     else if (diffLevel == "medium") fill = 36;
@@ -163,7 +164,6 @@ function generateBoard(diffLevel) {
         } while(pos.includes(num));
         pos.push(num);
     }
-    console.log(pos);
     let p = qsa("p");
     let k = 0;
     for (let i = 0; i < 9; i++)
@@ -200,10 +200,8 @@ function updateMove() {
 
 function clearPrevious() {
     let p = qsa("p");
-    for (let i = 0; i < p.length; i++) {
-        p[i].classList.remove(...p[i].classList);
-        p[i].textContent = null;
-    }
+    for (let i = 0; i < p.length; i++)
+        p[i].remove();
     
     if(timer) clearTimeout(timer);
 
