@@ -68,13 +68,22 @@ body .content .head {
   grid-area: 1/1/2/3;
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 75px 400px 100px;
-      grid-template-columns: 75px 400px 100px;
+  -ms-grid-columns: 200px 200px;
+      grid-template-columns: 200px 200px;
   justify-items: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   margin: 0px auto;
+}
+
+body .content .head #timer span {
+  padding: 5px 10px;
+}
+
+body .content .head [onclick="pauseTimer()"] {
+  cursor: pointer;
+  padding: 5px 10px;
 }
 
 body .content .sudoku {
@@ -107,6 +116,14 @@ body .content .sudoku p {
   border: solid lightgray 1px;
 }
 
+body .content .sudoku .bottomBorder {
+  border-bottom: solid black 1px;
+}
+
+body .content .sudoku .rightBorder {
+  border-right: solid black 1px;
+}
+
 body .content .sudoku .blankTile {
   font-weight: 300;
   background-color: yellow;
@@ -120,12 +137,13 @@ body .content .sudoku .selected {
 body .content .funcBtn {
   justify-self: flex-start;
   height: 450px;
+  width: 250px;
   padding: 10px;
   border: silver solid 1px;
   display: -ms-grid;
   display: grid;
-  -ms-grid-rows: 1fr 1fr 2fr 3fr;
-      grid-template-rows: 1fr 1fr 2fr 3fr;
+  -ms-grid-rows: 1fr 1fr 1fr 3fr;
+      grid-template-rows: 1fr 1fr 1fr 3fr;
 }
 
 body .content .funcBtn button {
@@ -138,13 +156,6 @@ body .content .funcBtn .hidden {
 
 body .content .funcBtn .active {
   display: block;
-}
-
-body .content .funcBtn .gameBtn {
-  display: -ms-grid;
-  display: grid;
-  -ms-grid-columns: 1fr 1fr 1fr;
-      grid-template-columns: 1fr 1fr 1fr;
 }
 
 body .content .funcBtn .numBtn {

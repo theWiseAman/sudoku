@@ -42,10 +42,20 @@ body {
       height: 75px;
       grid-area: 1/1/2/3;
       display: grid;
-      grid-template-columns: 75px 400px 100px;
+      grid-template-columns: 200px 200px;
       justify-items: center;
       align-items: center;
       margin: 0px auto;
+
+      #timer {
+        span {
+          padding: 5px 10px;
+        }
+      }
+      [onclick="pauseTimer()"] {
+        cursor: pointer;
+        padding: 5px 10px;
+      }
     }
     .sudoku {
       justify-self: flex-end;
@@ -66,6 +76,12 @@ body {
         font-weight: 700;
         border: solid lightgray 1px;
       }
+      .bottomBorder {
+        border-bottom: solid black 1px;
+      }
+      .rightBorder {
+        border-right: solid black 1px;
+      }
       .blankTile {
         font-weight: 300;
         background-color: yellow;
@@ -78,10 +94,11 @@ body {
     .funcBtn {
       justify-self: flex-start;
       height: 450px;
+      width: 250px;
       padding: 10px;
       border: silver solid 1px;
       display: grid;
-      grid-template-rows: 1fr 1fr 2fr 3fr;
+      grid-template-rows: 1fr 1fr 1fr 3fr;
       button {
         cursor: pointer;
       }
@@ -90,10 +107,6 @@ body {
       }
       .active {
         display: block;
-      }
-      .gameBtn {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
       }
       .numBtn {
         display: grid;

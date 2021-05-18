@@ -6,13 +6,13 @@
     <link rel="stylesheet" href="./css/style.css">
     <!-- <meta name="color-scheme" content="dark light"> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="./main.js"></script>
+    <script type="text/javascript" src="./main.js"></script>
     <title>Sudoku Game</title>
 </head>
 <body>
     <header>
         <h2>Sudoku Game</h2>
-        <a href="#">Sudoku Tips</a>
+        <a href="./html/help.html">Sudoku Tips</a>
         <select name="mode">
             <option value="classic">Classic</option>
         </select>
@@ -24,7 +24,6 @@
     <div class="content">
         <div class="head">
             <span id="diffLevel"></span>
-            <span>Auto-Check for Mistakes</span>
             <span id="timer">
                 <span>00:00</span>
                 <button onclick="pauseTimer()">Pause</button>
@@ -43,14 +42,13 @@
                 <option value="expert">Expert</option>
             </select>
             <button onclick="window.location.reload();" id="reload">Reload</button>
-            <div class="gameBtn">
-                <button>Undo</button>
+            <!-- <div class="gameBtn"> -->
+                <!-- Add more functional buttons -->
+                <!-- <button>Undo</button>
                 <button>Redo</button>
-                <button>Erase</button>
-                <button>possibilities</button>
-                <button>Hint</button>
-                <button type="submit">Submit Solution</button>
-            </div>
+                <button>Erase</button> -->
+            <button type="submit">Submit Solution</button>
+            <!-- </div> -->
             <div class="numBtn">
                 <button>1</button>
                 <button>2</button>
